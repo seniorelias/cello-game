@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2e211d">
+  <title>Cello Tiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="score">0</div>
+  </div>
+  <div id="hint" class="hidden">Toca la<br>primera nota</div>
+
+  <div id="title" class="screen">
+    <div class="panel">
+      <h1>Cello<br>Tiles</h1>
+      <p class="strings">C · G · D · A</p>
+      <button id="play">Tocar</button>
+      <p class="small">Toca las notas de las cuerdas<br>sin dejar que se escapen.</p>
+      <p class="small best">Récord: <span class="bestValue">0</span></p>
+    </div>
+  </div>
+
+  <div id="over" class="screen hidden">
+    <div class="panel">
+      <h2 id="overTitle">¡Ups!</h2>
+      <p>Notas: <span id="finalScore">0</span></p>
+      <p class="small best">Récord: <span class="bestValue">0</span></p>
+      <button id="again">Otra vez</button>
+      <button id="menu" class="secondary">Menú</button>
+    </div>
+  </div>
+
+  <script src="js/songs.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

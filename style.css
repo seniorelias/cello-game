@@ -1,0 +1,173 @@
+:root {
+  --ink: #3b2a24;
+  --cream: #f6e7c8;
+  --cream-dark: #e2c99a;
+  --amber: #f2c46d;
+  --amber-dark: #b07f35;
+  --rose: #d9665b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #2e211d;
+  color: var(--ink);
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
+.hidden { display: none !important; }
+
+#hud {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 18px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+#score {
+  display: inline-block;
+  font-size: 28px;
+  color: var(--cream);
+  text-shadow: 3px 3px 0 #1c1310, -1px -1px 0 #1c1310, 1px -1px 0 #1c1310, -1px 1px 0 #1c1310;
+}
+
+#hint {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 72px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--cream);
+  text-shadow: 2px 2px 0 #1c1310;
+  pointer-events: none;
+  animation: bob 1.2s steps(2) infinite;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-4px); }
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(28, 19, 16, 0.45);
+}
+
+.panel {
+  width: min(320px, 100%);
+  padding: 28px 20px 24px;
+  text-align: center;
+  background: var(--cream);
+  /* Borde pixelado en escalones */
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    inset -4px -4px 0 0 var(--cream-dark),
+    inset 4px 4px 0 0 #fff6e2,
+    8px 8px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 var(--amber);
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  color: var(--rose);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+p {
+  margin: 12px 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+p.small {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+.strings {
+  letter-spacing: 2px;
+  color: var(--amber-dark);
+}
+
+button {
+  font: inherit;
+  font-size: 16px;
+  display: block;
+  margin: 18px auto 8px;
+  padding: 14px 22px;
+  color: var(--ink);
+  background: var(--amber);
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    inset -4px -4px 0 0 var(--amber-dark),
+    inset 4px 4px 0 0 #ffe3a3;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    inset 4px 4px 0 0 var(--amber-dark);
+}
+
+button.secondary {
+  font-size: 11px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  background: var(--cream-dark);
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    inset -4px -4px 0 0 #c9ad7c,
+    inset 4px 4px 0 0 #f3dfb7;
+}
